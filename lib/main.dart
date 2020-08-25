@@ -12,8 +12,12 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
+        //Gerer la couleur de l'app
+        primarySwatch: Colors.green,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Flutter first app'),
+      //Pour faire disparaitre le debug
+      debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -47,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'You have pushed the button this many times:',
+              'Vous avez appuye sur ce bouton ce nombre de fois :',
             ),
             Text(
               '$_counter',
