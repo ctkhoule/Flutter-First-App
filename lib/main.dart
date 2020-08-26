@@ -32,6 +32,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  String prenom = '';
   int _counter = 0;
 
   void _incrementCounter() {
@@ -51,12 +52,27 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'Vous avez appuye sur ce bouton ce nombre de fois :',
+              'Salut $prenom, avez appuye sur ce bouton ce nombre de fois :',
+              textAlign: TextAlign.center,
+              style: new TextStyle(
+                color: Colors.red,
+                fontSize: 20.0
+              ),
             ),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
+            new TextField(
+              onChanged: (String string){
+                setState(() {
+                  prenom = string;
+                });
+              },
+              decoration: new InputDecoration(
+                labelText: 'Entrez votre prenom'
+              ),
+            )
           ],
         ),
       ),
